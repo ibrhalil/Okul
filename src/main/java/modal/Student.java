@@ -12,14 +12,13 @@ import java.util.*;
 @AllArgsConstructor
 @ToString(callSuper = true)
 public class Student extends User {
-    private String number = "";
-    private Set<Class> classes = new HashSet<>();
-    private List<Duty> homework = new ArrayList<>();
-    private Map<Absence, List<Date>> absencePeriod = new HashMap<>();
+    private String number;
+    private Set<Class> classes;
+    private List<Duty> homework;
+    private Map<Absence, List<Date>> absencePeriod;
 
-    @Override
     public String getPersonInfo() {
-        String info = super.getPersonInfo();
+        String info = "";
         info = info.concat("number : ").concat(this.getNumber()).concat(", \n");
         info = info.concat("classes : ").concat(this.getClasses().toString()).concat(", \n");
         info = info.concat("homework : ").concat(this.getHomework().toString()).concat(", \n");

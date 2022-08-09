@@ -5,23 +5,35 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import javax.persistence.*;
+import java.util.Date;
+import java.util.UUID;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@MappedSuperclass
 public abstract class Person {
+
+    @Id
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private UUID uuid;
+
+    @Column(name = "NAME")
     private String name;
+
+    @Column(name = "LAST_NAME")
     private String lastName;
+
+    @Column(name = "SEX")
+    @Enumerated(EnumType.STRING)
     private Gender gender;
-    private Contact contact;
 
-    public String getPersonInfo() {
+    /*@OneToOne
+    private Contact contact;*/
 
-        String info = "Person {\n" ;
-        info = info.concat("name : ").concat(this.getName()).concat(", \n");
-        info = info.concat("lastName : ").concat(this.getLastName()).concat(", \n");
-        info = info.concat("gender : ").concat(this.getGender().toString()).concat(", \n");
-        info = info.concat("contact : ").concat(this.getContact().toString()).concat(", \n");
+    @Temporal(TemporalType.DATE)
+    private Date birthday;
 
-        return info;
-    }
 }
