@@ -10,7 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString(callSuper=true)
 public class User extends Person{
-    String nickName;
-    String password;
-    boolean active;
+    private String nickName;
+    private String password;
+    private boolean active;
 }

@@ -12,6 +12,6 @@ import java.util.Set;
 @AllArgsConstructor
 @ToString(callSuper = true)
 public class Teacher extends User {
-    String job;
-    Set<Class> classes;
+    private String job;
+    private Set<Class> classes;
 }

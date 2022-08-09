@@ -11,9 +11,8 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 public class Contact {
-    Map<ContactType, Address> addresses;
-    Set<String> phones;
-    Set<String> eMails;
+    private Map<ContactType, Address> addresses;
+    private Set<String> phones;
+    private Set<String> eMails;
 }

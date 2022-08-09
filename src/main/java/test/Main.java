@@ -92,7 +92,7 @@ public class Main {
         userHatice.setPassword("qwerqwer");
         userHatice.setActive(true);
 
-        System.out.println(hatice);
+        System.out.println(((Student) hatice).getPersonInfo());
 
     }
 

@@ -4,10 +4,9 @@ import lombok.*;
 
 @Data
 @RequiredArgsConstructor
-@ToString
 public class Class {
     @NonNull
-    String name;
+    private String name;
 
-    Teacher overseerTeacher;
+    private Teacher overseerTeacher;
 }
